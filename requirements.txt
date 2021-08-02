@@ -1,8 +1,10 @@
 dvc
 pandas
 pyarrow
+pyyaml
 requests
 
 catboost
 lightgbm
 sklearn
+scipy
