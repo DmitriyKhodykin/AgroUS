@@ -1,1 +1,1 @@
-Machine learning project for predicting yield, consumption and crop residues
+Machine learning project for predicting Production, Supply and Distribution of World Agricultural Commodities
