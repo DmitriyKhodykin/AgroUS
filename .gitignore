@@ -150,6 +150,3 @@ fabric.properties
 
 # Autentification data
 auth/
-
-# Data
-data/
