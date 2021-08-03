@@ -7,6 +7,53 @@ import xml.etree.ElementTree
 
 import yaml
 
+
+"""
+Data prepare module from USDA.
+
+API methods: https://apps.fas.usda.gov/opendataweb/home
+"""
+import json
+import pandas
+import requests
+
+from auth import auth
+
+URL = 'https://apps.fas.usda.gov/OpenData'
+HEADERS_USDA = {
+    'Accept': 'application/json',
+    'API_KEY': auth.usda_apikey
+}
+
+
+def main():
+    """
+    Imports pipeline.
+    :return:
+    """
+    import_psd_commodity_attributes()
+
+
+def import_psd_commodity_attributes() -> pandas.DataFrame:
+    """
+    Imports PSD src_ from FAS USDA.
+    :return: commodity attributes dataset
+    """
+    address = '/api/psd/commodityAttributes'
+    request = requests.get(f'{URL}{address}', headers=HEADERS_USDA)
+    if request.status_code == 200:
+        try:
+            response = json.loads(request.text)
+            commodity_attributes = pandas.DataFrame(response)
+            print(commodity_attributes.head())
+            return commodity_attributes
+        except json.decoder.JSONDecodeError as e:
+            print(e)
+    else:
+        print(f'error: response code = {request.status_code}')
+
+###################################################################
+
 params = yaml.safe_load(open("params.yaml"))["prepare"]
 
 if len(sys.argv) != 2:

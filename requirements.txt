@@ -2,6 +2,7 @@ dvc
 pandas
 pyarrow
 pyyaml
+pypiwin32
 requests
 
 catboost
