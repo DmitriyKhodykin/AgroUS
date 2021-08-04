@@ -12,16 +12,5 @@ jobs:
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "# CML Report" > report.md
-
-          echo "## Plots" >> report.md
-          dvc plots diff bigrams-experiment workspace \
-            --show-vega --targets prc.json > vega.json
-          vl2svg vega.json prc.svg
-          cml-publish prc.svg --title "Precision & Recall" --md >> report.md
-
-          echo "## Metrics" >> report.md
-          echo "### bigrams-experiment → workspace" >> report.md
-          dvc metrics diff bigrams-experiment --show-md >> report.md
-
-          cml-send-comment report.md
+          # ML workflow runners
+          pip install -r requirements.txt
