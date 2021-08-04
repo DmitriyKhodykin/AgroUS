@@ -1,4 +1,4 @@
-name: CML Report
+name: AgroUS
 on: push
 jobs:
   run:
