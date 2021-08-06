@@ -7,7 +7,7 @@ stages:
       - prepare.seed
       - prepare.split
     outs:
-      - data/prepared
+      - data/prepared/data.parquet
   featurize:
     cmd: python src/featurization.py data/prepared data/features
     deps:
