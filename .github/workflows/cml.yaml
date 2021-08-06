@@ -20,4 +20,3 @@ jobs:
 
           # DVC workflow from dvc.yaml file
           dvc repro
-          dvc prod
