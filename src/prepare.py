@@ -25,8 +25,7 @@ class CreateUsdaDataset:
         self.url = 'https://apps.fas.usda.gov/OpenData'
         self.headers_usda = {
             'Accept': 'application/json',
-            # 'API_KEY': os.environ['USDA_API_KEY']
-            'API_KEY': '6a796d30-1e5f-4461-905e-1f2822dba071'
+            'API_KEY': os.environ['USDA_API_KEY']
         }
 
     def save_dataframe(self):
