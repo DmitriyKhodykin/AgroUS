@@ -11,6 +11,7 @@ jobs:
       - name: Generate metrics report
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USDA_API_KEY: ${{ secrets.USDA_API_KEY }}
         run: |
           # ML workflow runners
 
