@@ -25,7 +25,8 @@ class CreateUsdaDataset:
         self.url = 'https://apps.fas.usda.gov/OpenData'
         self.headers_usda = {
             'Accept': 'application/json',
-            'API_KEY': os.environ['USDA_API_KEY']
+            # 'API_KEY': os.environ['USDA_API_KEY']
+            'API_KEY': '6a796d30-1e5f-4461-905e-1f2822dba071'
         }
 
     def save_dataframe(self):
@@ -34,7 +35,7 @@ class CreateUsdaDataset:
         """
         dataframe = self.merge_dataset_and_catalogs()
         try:
-            dataframe.to_parquet('data/data.parquet')
+            dataframe.to_parquet('data/prepared/data.parquet')
             print('All data saved...')
         except FileNotFoundError as e:
             print(e)
