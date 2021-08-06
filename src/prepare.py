@@ -4,11 +4,11 @@ Data prepare module from USDA.
 API methods: https://apps.fas.usda.gov/opendataweb/home
 """
 import json
+import os
+
 import pandas
 import requests
 import yaml
-
-from auth import auth
 
 
 def main():
@@ -25,7 +25,7 @@ class CreateUsdaDataset:
         self.url = 'https://apps.fas.usda.gov/OpenData'
         self.headers_usda = {
             'Accept': 'application/json',
-            'API_KEY': auth.usda_apikey
+            'API_KEY': os.environ['USDA_API_KEY']
         }
 
     def save_dataframe(self):
