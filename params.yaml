@@ -12,5 +12,5 @@ train:
   min_split: 2
 
 period:
-  start: 2000
+  start: 1990
   stop: 2020
