@@ -36,7 +36,7 @@ class CreateUsdaDataset:
         """
         dataframe = self.merge_dataset_and_catalogs()
         try:
-            dataframe.to_parquet('../data/data.parquet')
+            dataframe.to_parquet('data/data.parquet')
             print('All data saved...')
         except FileNotFoundError as e:
             print(e)
@@ -77,8 +77,8 @@ class CreateUsdaDataset:
         codes = self._get_api_data_by_link(f'{self.url}/api/psd/commodities')
         commodity_codes = list(codes['commodityCode'])
         # Reporting period
-        period_start = yaml.safe_load(open('../params.yaml'))['period']['start']
-        period_stop = yaml.safe_load(open('../params.yaml'))['period']['stop']
+        period_start = yaml.safe_load(open('params.yaml'))['period']['start']
+        period_stop = yaml.safe_load(open('params.yaml'))['period']['stop']
         print(f'Reporting period from: {period_start} to: {period_stop} ')
 
         print('Iteration by commodity codes and periods...')

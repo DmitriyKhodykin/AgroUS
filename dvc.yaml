@@ -1,8 +1,9 @@
 stages:
   prepare:
-    cmd: python src/prepare.py
+    cmd: python src/prepare.py data/data.parquet
     deps:
       - src/prepare.py
+      - data/data.parquet
     params:
       - prepare.seed
       - prepare.split
