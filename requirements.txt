@@ -1,4 +1,5 @@
 dvc
+dvc[gdrive]
 pandas
 pyarrow
 pyyaml
