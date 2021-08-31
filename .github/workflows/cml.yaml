@@ -16,7 +16,7 @@ jobs:
           # ML workflow runners
 
           # Install requirements
-          pip install -r requirements.txt
+          #pip install -r requirements.txt
 
           # DVC workflow from dvc.yaml file
-          dvc repro
+          #dvc repro
