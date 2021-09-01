@@ -2,6 +2,7 @@
 Data prepare module from USDA.
 
 API methods: https://apps.fas.usda.gov/opendataweb/home
+Example: https://www.ers.usda.gov/webdocs/outlooks/101941/aes-117.pdf?v=9057.9
 """
 import json
 import os
